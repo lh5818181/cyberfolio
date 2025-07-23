@@ -11,7 +11,7 @@ export const Container = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 `
 
 export const NavLinks = styled.div`
@@ -23,8 +23,27 @@ export const NavLinks = styled.div`
     color: ${({ theme }) => theme.colors.text};
     text-decoration: none;
     font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
 
-    &:hover {
+    &::after {
+      content: '';
+      display: block;
+      height: 2px;
+      width: 0%;
+      background-color: ${({ theme }) => theme.colors.primary};
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after,
+    &.active::after {
+      width: 100%;
+    }
+
+    &.active {
       color: ${({ theme }) => theme.colors.primary};
     }
   }
