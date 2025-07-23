@@ -6,19 +6,23 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "format": "prettier --write \"src/**/*.{js,ts,tsx,css,scss}\""
   },
    "husky": {
      "hooks": {
        "pre-commit": "npx lint-staged"
      }
    },
-      "lint-staged": {
+   "lint-staged": {
      "src/**/*.{ts,tsx}": [
        "eslint --fix",
        "prettier --write"
-     ]
+     ],
+    "src/**/*.{js,css,scss}": [
+      "prettier --write"
+    ]
    },
   "dependencies": {
     "react": "^19.1.0",

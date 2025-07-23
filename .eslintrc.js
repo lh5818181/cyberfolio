@@ -1,4 +1,5 @@
 module.exports = {
+   ignores: ['node_modules/**', 'build/**', 'dist/**'],
   env: {
     browser: true,
     es2021: true,
