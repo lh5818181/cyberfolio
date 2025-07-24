@@ -3,17 +3,15 @@ import { motion } from 'framer-motion'
 import { theme } from '../../styles/theme'
 
 export const Container = styled.section`
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: linear-gradient(160deg, #0f0f10, #1a1a1d);
-  color: ${({ theme }) => theme.colors.text};
-  position: relative;
-  padding: 2rem;
-  scroll-snap-align: start;
-  overflow: hidden;
+    text-transform: uppercase;
+    cursor: default;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    display: flex
+;
 `
 
 export const StatusBadge = styled.div`
@@ -50,23 +48,31 @@ export const Words = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.3rem;
+  gap: 2rem;
   margin-bottom: 2rem;
 `
 
 export const Word = styled.h1`
-  font-size: ${theme.fontSizes.display};
-  font-weight: 900;
-  text-transform: uppercase;
-  color: ${({ theme }) => theme.colors.neon || '#00ffff'};
-  text-shadow: 0 0 10px ${({ theme }) => theme.colors.neon || '#00ffff'};
-  font-family: 'Orbitron', 'Space Grotesk', sans-serif;
-  line-height: 0.5;
-
-  @media (max-width: 768px) {
-    font-size: 3rem;
-  }
+    letter-spacing: -.075em;
+    font-family: PP-Bold;
+    font-size: 12vw;
+    line-height: .75em;
+    margin: 0;
+    text-shadow: 0 0 10px ${({ theme }) => theme.colors.neon || '#00ffff'};
+    color: ${({ theme }) => theme.colors.neon || '#00ffff'};
 `
+
+//  font-size: ${theme.fontSizes.display};
+//   font-weight: 900;
+//   text-transform: uppercase;
+//   
+//   
+//   
+//   line-height: 0.5;
+//     
+//   @media (max-width: 768px) {
+//     font-size: 3rem;
+//   }
 
 export const Subtext = styled.p`
   max-width: 600px;

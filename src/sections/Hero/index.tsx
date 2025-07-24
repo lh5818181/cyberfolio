@@ -14,14 +14,18 @@ export const Hero = () => {
       >
         <Words>
           <Word>INOVADOR</Word>
-          <Word>ESTRATÉGICO</Word>
-          <Word>FULL STACK</Word>
-        </Words>
-
-        <Subtext>
+          <div>
+            <Word>ESTRATÉGICO</Word>
+                    <Subtext>
           CONSTRUO EXPERIÊNCIAS DIGITAIS PARA NEGÓCIOS QUE PENSAM À FRENTE.<br />
           <em>FOCADO EM DESIGN.</em> OBCECADO POR <strong>CÓDIGO</strong>. BASEADO NO BR, CONECTADO COM O MUNDO.
         </Subtext>
+          </div>
+          
+          <Word>FULL STACK</Word>
+        </Words>
+
+
       </Content>
 
       <StartProject href="#contact">
