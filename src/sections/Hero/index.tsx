@@ -1,21 +1,32 @@
-import { Container, Content, Title, Subtitle, CTABtns } from './styles'
-import { Button } from '../../components/Button'
+import { Container, Content, Words, Word, Subtext, StatusBadge, StartProject } from './styles'
 
 export const Hero = () => {
   return (
     <Container id="hero">
+      <StatusBadge>
+        🚀 DISPONÍVEL PARA PROJETOS EM AGOSTO
+      </StatusBadge>
+
       <Content
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <Title>Olá, eu sou o Henrique</Title>
-        <Subtitle>Full‑Stack Developer & entusiasta de neon futurista</Subtitle>
-        <CTABtns>
-          <Button as="a" href="#projects">Ver Projetos</Button>
-          <Button as="a" href="#contact">Contato</Button>
-        </CTABtns>
+        <Words>
+          <Word>INOVADOR</Word>
+          <Word>ESTRATÉGICO</Word>
+          <Word>FULL STACK</Word>
+        </Words>
+
+        <Subtext>
+          CONSTRUO EXPERIÊNCIAS DIGITAIS PARA NEGÓCIOS QUE PENSAM À FRENTE.<br />
+          <em>FOCADO EM DESIGN.</em> OBCECADO POR <strong>CÓDIGO</strong>. BASEADO NO BR, CONECTADO COM O MUNDO.
+        </Subtext>
       </Content>
+
+      <StartProject href="#contact">
+        FALE COMIGO AGORA
+      </StartProject>
     </Container>
   )
 }
