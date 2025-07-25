@@ -14,7 +14,7 @@ export const Hero = () => {
       >
         <Words>
           <Word>INOVADOR</Word>
-          <div>
+          <div className='textCenter'>
             <Word>ESTRATÉGICO</Word>
                     <Subtext>
           CONSTRUO EXPERIÊNCIAS DIGITAIS PARA NEGÓCIOS QUE PENSAM À FRENTE.<br />

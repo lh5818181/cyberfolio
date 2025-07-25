@@ -20,7 +20,7 @@ export const theme = {
     large: '1.2rem',
     xlarge: '1.6rem',
     xxlarge: '2.2rem',
-    display: '3.2rem',
+    display: '9vw',
   },
   fontFamily: {
   heading: `'Orbitron', sans-serif`,
