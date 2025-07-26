@@ -7,6 +7,7 @@ import { About } from './sections/About'
 // import { Footer } from './sections/Footer'
 import { GlobalStyle } from './styles/GlobalStyles'
 
+
 function App() {
   return (
     <>

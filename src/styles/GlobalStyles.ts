@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { theme } from './theme';
 
-
 export const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
     box-sizing: border-box;
@@ -9,6 +8,14 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     scroll-behavior: smooth;
+    font-size: 16px;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+    @media (max-width: 480px) {
+      font-size: 12px;
+    }
   }
 
   body {
@@ -16,10 +23,6 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${theme.colors.background};
     color: ${theme.colors.text};
     font-family: 'Inter', sans-serif;
+    line-height: 1.6;
   }
 `;
-
-
-
-
-

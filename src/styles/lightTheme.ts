@@ -1,18 +1,18 @@
 // src/styles/lightTheme.ts
-import type { DefaultTheme } from 'styled-components'
+import type { DefaultTheme } from 'styled-components';
 
 export const lightTheme: DefaultTheme = {
   colors: {
     primary: '#0066cc',
     neon: '#0066cc',
-    background: '#ffffff',
+    background: '#f5f5f5',
     text: '#111111',
     textSecondary: '#333333',
-    primaryHover: '#0055aa',
-    neonGreen: '#33cc33',
-    neonPink: '#ff3399',
-    darkGray: '#f0f0f0',
-    chipBg: '#eeeeee',
+    primaryHover: '#005bb5',
+    neonGreen: '#39ff14',
+    neonPink: '#ff007f',
+    darkGray: '#dddddd',
+    chipBg: '#e0e0e0',
     chipBorder: '#0066cc',
   },
   fontSizes: {
@@ -22,7 +22,7 @@ export const lightTheme: DefaultTheme = {
     large: '1.2rem',
     xlarge: '1.6rem',
     xxlarge: '2.2rem',
-    display: '9vw',
+    display: '8vw',
   },
   fontFamily: {
     heading: `'Orbitron', sans-serif`,
@@ -37,10 +37,10 @@ export const lightTheme: DefaultTheme = {
     textTransform: 'uppercase',
     fontSize: '0.75rem',
     backgroundColor: '#0066cc',
-    color: '#fff',
+    color: '#f5f5f5',
   },
   shadows: {
-    card: '0 4px 20px rgba(0, 0, 0, 0.1)',
+    card: '0 4px 20px rgba(0, 102, 204, 0.2)',
     chip: '0 0 8px rgba(0, 102, 204, 0.7)',
   },
-}
+};
