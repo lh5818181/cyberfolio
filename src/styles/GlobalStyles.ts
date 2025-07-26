@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { theme } from './theme';
 
 
 export const GlobalStyle = createGlobalStyle`
@@ -12,8 +13,8 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-    background-color: ${({ theme }) => theme.colors.background};
-    color: ${({ theme }) => theme.colors.text};
+    background-color: ${theme.colors.background};
+    color: ${theme.colors.text};
     font-family: 'Inter', sans-serif;
   }
 `;

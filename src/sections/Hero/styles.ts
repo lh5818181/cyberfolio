@@ -16,8 +16,8 @@ export const Container = styled.section`
 
 export const StatusBadge = styled.div`
   position: absolute;
-  top: 6rem;
-  left: 1.5rem;
+  top: 3rem;
+  right: 1.5rem;
   background: rgba(0, 255, 255, 0.1);
   border: 1px solid ${theme.colors.primary};
   color: ${theme.colors.primary};

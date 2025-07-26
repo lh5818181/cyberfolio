@@ -1,6 +1,6 @@
 import { Navbar } from './components/Navbar'
 import { Hero } from './sections/Hero'
-// import { About } from './sections/About'
+import { About } from './sections/About'
 // import { Projects } from './sections/Projects'
 // import { Services } from './sections/Services'
 // import { Contact } from './sections/Contact'
@@ -14,8 +14,8 @@ function App() {
       <Navbar />
       <main >
         <Hero />
-        {/* <About />
-        <Projects />
+        { <About />
+        /*<Projects />
         <Services />
         <Contact />
         <Footer /> */}
@@ -25,3 +25,5 @@ function App() {
 }
 
 export default App
+
+

@@ -1,82 +1,51 @@
-import { useEffect, useState } from 'react';
-import { Container, HamburgerButton, MobileMenu, Logo } from './styles';
-import { ThemeToggle } from '../ThemeToggle';
-import { AnimatePresence, motion } from 'framer-motion';
+import { useEffect, useState } from 'react'
+import { Container, IconList, IconItem, Label } from './styles'
+import { Home, User, Folder, Briefcase, Mail } from 'lucide-react'
+import { ThemeToggle } from '../ThemeToggle'
 
-const sections = ['hero', 'about', 'projects', 'services', 'contact'];
+const navItems = [
+  { id: 'hero', icon: <Home size={24} />, label: 'Início' },
+  { id: 'about', icon: <User size={24} />, label: 'Sobre' },
+  { id: 'projects', icon: <Folder size={24} />, label: 'Projetos' },
+  { id: 'services', icon: <Briefcase size={24} />, label: 'Serviços' },
+  { id: 'contact', icon: <Mail size={24} />, label: 'Contato' },
+]
 
 export const Navbar = () => {
-  const [activeSection, setActiveSection] = useState<string>('hero');
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [active, setActive] = useState<string>('hero')
+  const [hovered, setHovered] = useState<boolean>(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 100;
-
-      for (let i = 0; i < sections.length; i++) {
-        const section = document.getElementById(sections[i]);
-        if (section) {
-          const offsetTop = section.offsetTop;
-          const offsetHeight = section.offsetHeight;
-
-          if (
-            scrollPosition >= offsetTop &&
-            scrollPosition < offsetTop + offsetHeight
-          ) {
-            setActiveSection(sections[i]);
-            break;
-          }
+    const onScroll = () => {
+      const pos = window.scrollY + window.innerHeight / 2
+      navItems.forEach(({ id }) => {
+        const sec = document.getElementById(id)
+        if (sec && pos >= sec.offsetTop && pos < sec.offsetTop + sec.offsetHeight) {
+          setActive(id)
         }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const handleToggle = () => setIsOpen((prev) => !prev);
-  const handleClose = () => setIsOpen(false);
+      })
+    }
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (
-    <Container>
-      <Logo>devrique</Logo>
-      <HamburgerButton onClick={handleToggle}>
-        <span className={isOpen ? 'open' : ''} />
-        <span className={isOpen ? 'open' : ''} />
-        <span className={isOpen ? 'open' : ''} />
-      </HamburgerButton>
-
-      <AnimatePresence>
-        {isOpen && (
-          <MobileMenu
-            as={motion.div}
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3 }}
-          >
-            {sections.map((section) => (
-              <a
-                key={section}
-                href={`#${section}`}
-                className={activeSection === section ? 'active' : ''}
-                onClick={handleClose}
-              >
-                {section === 'hero'
-                  ? 'Início'
-                  : section === 'about'
-                  ? 'Sobre'
-                  : section === 'projects'
-                  ? 'Projetos'
-                  : section === 'services'
-                  ? 'Serviços'
-                  : 'Contato'}
-              </a>
-            ))}
-            <ThemeToggle />
-          </MobileMenu>
-        )}
-      </AnimatePresence>
+    <Container
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      $expanded={hovered}
+    >
+      <IconList>
+        {navItems.map(({ id, icon, label }) => (
+          <IconItem key={id} className={active === id ? 'active' : ''}>
+            <a href={`#${id}`}>
+              {icon}
+              {hovered && <Label>{label}</Label>}
+            </a>
+          </IconItem>
+        ))}
+      </IconList>
+      <ThemeToggle />
     </Container>
-  );
-};
+  )
+}
